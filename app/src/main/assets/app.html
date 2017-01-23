@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<!--
+    Miniport by HTML5 UP
+    html5up.net | @n33co
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>PICTURE LIB</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <!--//<link rel="stylesheet" href="assets/css/main.css" />-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+</head>
+<body>
+
+
+    <div class="wrapper style2" style="text-align:center; padding-top:50px;">
+
+        <footer>
+
+            <button id="btn" style="width:50px; height:50px;">点我贱人</button>
+
+            <div>测试缓存</div>
+            <div>最后改一次</div>
+
+            <div id="mess" style="height:100px;text-align:center; color:red; padding-top:50px;"></div>
+        </footer>
+        </article>
+    </div>
+    <!-- Portfolio -->
+
+    <script src="js/jquery.min.js"></script>
+
+    <script>
+        $("#btn").click(function (e) {
+            try {
+                console.log("ceshi ")
+                var params = { "a": 1, "b": "ceshi", "c": { "d": "cejs1" } }
+                android.sayHello(JSON.stringify(params));
+                window.webkit.messageHandlers.callAppMethod.postMessage({ body: { "a": "贱人1", "b": "贱人2" } });
+
+            } catch (e) {
+                console.log(e.message);
+            }
+
+
+        })
+        function test(a) {
+            var $obj = $("#mess"),
+                v = "贱人调用成功了";
+            if (a) {
+                v = "贱人调用成功了（{1}）".replace("{1}", a);
+            }
+            $obj.css("font-size", "12px");
+            $obj.html(v);
+            var inter = setInterval(function () {
+                var ft = $obj.css("font-size").split("p");
+
+                ft = parseInt(ft) + 4;
+
+                $obj.css("font-size", ft + "px");
+            }, 500);
+
+            return { "a": 1, "b": 2 };
+            setTimeout(function () {
+                clearInterval(inter);
+            }, 4000);
+
+        }
+        alert("测试")
+    </script>
+
+
+</body>
+</html>
